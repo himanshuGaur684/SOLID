@@ -42,6 +42,7 @@ android {
 dependencies {
 
     implementation(project(":notification"))
+    implementation(project(":auth"))
     implementation(project(":common"))
 
     implementation(libs.androidx.core.ktx)

@@ -1,8 +1,10 @@
 package gaur.himanshu.auth
 
+import gaur.himanshu.auth.credentials.Credentials
+
 interface Authenticator {
 
-    fun login(username: String, password: String)
+    fun login(credentials: Credentials)
 
     fun logout(): Boolean
 

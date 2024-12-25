@@ -1,19 +1,20 @@
 package gaur.himanshu.camera
 
-class VideoCamera : CameraFeature {
-    override fun capturePhoto() {
-
-    }
+open class VideoCamera(
+    private val flashControl: FlashControl
+) : VideoCapture {
 
     override fun captureVideo() {
 
     }
 
-    override fun enableFlash() {
+}
 
-    }
 
-    override fun disableFlash() {
-
+class HighResVideo(
+    private val flashControl: FlashControl
+) : VideoCamera(flashControl){
+    override fun captureVideo() {
+        super.captureVideo()
     }
 }

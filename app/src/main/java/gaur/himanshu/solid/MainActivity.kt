@@ -11,11 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import gaur.himanshu.common.module.ModuleIdentifier
-import gaur.himanshu.notification.Notifiable
+import gaur.himanshu.auth.EmailAuthenticator
+import gaur.himanshu.auth.FingerprintAuthenticator
+import gaur.himanshu.auth.GoogleAuthenticator
 import gaur.himanshu.solid.ui.theme.SOLIDTheme
 
 class MainActivity : ComponentActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,17 +32,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-
-class NotifiableImpl : Notifiable{
-    override fun shouldNotify(identifier: ModuleIdentifier): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun notify(message: String) {
-        TODO("Not yet implemented")
     }
 }
 
@@ -57,4 +49,18 @@ fun GreetingPreview() {
     SOLIDTheme {
         Greeting("Android")
     }
+}
+
+fun main(){
+    // google authentication
+    val googleAuthenticator = GoogleAuthenticator()
+    val googleViewModel = AuthViewModel(googleAuthenticator)
+
+    // user authentication
+    val emailAuthenticator = EmailAuthenticator()
+    val emailViewModel = AuthViewModel(emailAuthenticator)
+
+    // fingerprint authentication
+    val fingerPrintAuthenticator = FingerprintAuthenticator()
+    val fingerViewModel = AuthViewModel(fingerPrintAuthenticator)
 }

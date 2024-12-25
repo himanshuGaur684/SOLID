@@ -1,15 +1,9 @@
 package gaur.himanshu.billing
 
-import gaur.himanshu.model.Report
-
 class BillingManager {
 
     fun createBill() {
 
-    }
-
-    fun extractReport(): Report {
-        return Report("final report")
     }
 
     fun removeItem(): Boolean {

@@ -1,8 +1,13 @@
 package gaur.himanshu.auth
 
+import gaur.himanshu.auth.credentials.Credentials
+
 class FingerprintAuthenticator : Authenticator {
-    override fun login(username: String, password: String) {
-        throw IllegalArgumentException("username and password is not used")
+    override fun login(credentials: Credentials) {
+        if (credentials is Credentials.FingerPrintCredentials) {
+
+        }
+
     }
 
     override fun logout(): Boolean {

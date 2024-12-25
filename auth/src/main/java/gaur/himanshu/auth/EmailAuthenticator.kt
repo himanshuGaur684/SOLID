@@ -1,8 +1,12 @@
 package gaur.himanshu.auth
 
-class EmailAuthenticator : Authenticator {
-    override fun login(username: String, password: String) {
+import gaur.himanshu.auth.credentials.Credentials
 
+class EmailAuthenticator : Authenticator {
+    override fun login(credentials: Credentials) {
+        if(credentials is Credentials.UserCredentials){
+
+        }
     }
 
     override fun logout(): Boolean {

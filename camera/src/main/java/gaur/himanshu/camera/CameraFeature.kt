@@ -1,8 +1,14 @@
 package gaur.himanshu.camera
 
-interface CameraFeature {
-    fun capturePhoto()
-    fun captureVideo()
+interface FlashControl {
     fun enableFlash()
     fun disableFlash()
+}
+
+interface VideoCapture {
+    fun captureVideo()
+}
+
+interface PhotoCapture {
+    fun capturePhoto()
 }

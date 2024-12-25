@@ -3,14 +3,24 @@ package gaur.himanshu.notification
 import gaur.himanshu.common.module.ModuleIdentifier
 
 
-class NotificationNotifier {
+interface Notificable {
+    fun shouldNotify(): Boolean
+    fun notify(message: String, module: ModuleIdentifier)
+}
 
-    private val notifier: Notifier by lazy { Notifier() }
+open class NotificationNotifier(
+    private val list: List<Notificable>
+) {
+   open fun send(message: String, module: ModuleIdentifier) {
+        list.firstOrNull { it.shouldNotify() }?.notify(message, module)
+    }
+}
 
-    fun send(message: String, module: ModuleIdentifier) {
-        when (module) {
-            ModuleIdentifier.BillingModule -> notifier.notify(message, module)
-            ModuleIdentifier.UserModule -> notifier.notify(message, module)
-        }
+
+class SpecialNotifications(
+    private val list: List<Notificable>
+) : NotificationNotifier(list){
+    override fun send(message: String, module: ModuleIdentifier) {
+
     }
 }
