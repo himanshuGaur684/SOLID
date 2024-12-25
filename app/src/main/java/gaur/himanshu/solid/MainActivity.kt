@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import gaur.himanshu.common.module.ModuleIdentifier
+import gaur.himanshu.notification.Notifiable
 import gaur.himanshu.solid.ui.theme.SOLIDTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,6 +29,17 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+
+
+class NotifiableImpl : Notifiable{
+    override fun shouldNotify(identifier: ModuleIdentifier): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun notify(message: String) {
+        TODO("Not yet implemented")
     }
 }
 

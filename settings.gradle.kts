@@ -23,3 +23,7 @@ rootProject.name = "SOLID"
 include(":app")
 include(":billing")
 include(":rest")
+include(":notification")
+include(":common")
+include(":auth")
+include(":camera")
