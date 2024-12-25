@@ -4,7 +4,7 @@ import gaur.himanshu.model.Report
 
 class BillingManager {
 
-    fun create() {
+    fun createBill() {
 
     }
 
